@@ -1,0 +1,47 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    margin: 0;
+}
+.App {
+    height: 94.65vh;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    align-items: center;
+    overflow: auto;
+    color: white;
+    background-color: black;
+}
+
+.subnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    color: white;
+    width: 25vw;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    color: white;
+}
+
+.test {
+    color: white;
+}
