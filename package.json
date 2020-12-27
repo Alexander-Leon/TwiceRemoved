@@ -6,24 +6,31 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "compression": "^1.7.4",
+    "connect-session-sequelize": "^7.0.4",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "googleapis": "^66.0.0",
     "morgan": "^1.10.0",
+    "passport": "^0.4.1",
     "path": "^0.12.7",
     "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "socket.io": "^3.0.4",
     "three": "^0.124.0",
-    "vanta": "^0.5.21",
-    "web-vitals": "^0.2.4"
+    "vanta": "^0.5.21"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm install && cd client && npm install --only-dev && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [

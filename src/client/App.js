@@ -3,12 +3,14 @@ import Topology from "vanta/src/vanta.net"
 import Navbar from './Navbar'
 import Body from './components/Body'
 import Footer from './Footer'
+import axios from 'axios'
 import * as THREE from 'three'
 
 class App extends React.Component{
   constructor(){
     super()
     this.vantaRef = React.createRef()
+    this.sheet = {}
   }
 
   componentDidMount(){
@@ -21,12 +23,22 @@ class App extends React.Component{
       spacing: 15,
       THREE: THREE
     })
+    this.sheet = this.loadSheet()
   }
+
   componentWillUnmount(){
     if (this.vantaEffect) this.vantaEffect.destroy()
   }
 
+
+  loadSheet = async() => {
+    const {data} = await axios(process.env.SHEET_URL)
+    console.log(data.feed.entry )
+    return data
+  }
+
   render(){
+    console.log(this.sheet)
     return (
       <>
       <Navbar />
