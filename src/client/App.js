@@ -32,7 +32,7 @@ class App extends React.Component{
 
 
   loadSheet = async() => {
-    const {data} = await axios(SHEET_URL)
+    const {data} = await axios(process.env.SHEET_URL)
     console.log(data)
     return data
   }
