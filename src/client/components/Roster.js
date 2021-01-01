@@ -15,7 +15,7 @@ class Roster extends React.Component {
     }
 
     async loadRoster() {
-        const {data} = await axios('https://spreadsheets.google.com/feeds/cells/1WGMyxDM3qiEqe1SpHczYwO8BWVMA1tIaQF2qUQR9NYU/1/public/full?alt=json')
+        const {data} = await axios(process.env.REACT_APP_ROSTER)
         const parsingData = data.feed.entry
         const obj = {}
         const roster = {}
