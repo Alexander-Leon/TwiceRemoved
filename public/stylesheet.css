@@ -9,6 +9,7 @@ html, body {
     width: 100vw;
     max-width: 100%;
     margin: 0;
+    background-color: black;
 }
 
 .navbar {
@@ -42,6 +43,30 @@ a {
     color: white;
 }
 
-.test {
+.home {
     color: white;
+    width: 100vw;
+    text-align: center;
+    font-size: 8vh;
+    font-weight: bolder;
+    
+}
+
+.killpics{
+    width: 60vw;
+    height: auto;
+}
+.kill {
+    vertical-align: top;
+    display: inline;
+    text-align: center;
+}
+.caption{
+    display: block;
+}
+
+.roleimg{
+    width: 25px;
+    height: 25px;
+    padding-right: 20px;
 }

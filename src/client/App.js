@@ -1,49 +1,47 @@
 import React from 'react'
-import Topology from "vanta/src/vanta.net"
 import Navbar from './Navbar'
 import Body from './components/Body'
 import Footer from './Footer'
-import axios from 'axios'
-import * as THREE from 'three'
+import Roster from './components/Roster'
 
 class App extends React.Component{
   constructor(){
     super()
-    this.vantaRef = React.createRef()
-    this.sheet = {}
+    this.state = {
+    renderDisplay: <Body />
+    }
+    this.switchRender = this.switchRender.bind(this)
   }
-
-  componentDidMount(){
-    this.vantaEffect = Topology({
-      el:this.vantaRef.current,
-      color: 0xc82cd2,
-      backgroundColor: 0x0,
-      points: 20,
-      maxDistance: 25,
-      spacing: 15,
-      THREE: THREE
-    })
-    this.sheet = this.loadSheet()
-  }
-
-  componentWillUnmount(){
-    if (this.vantaEffect) this.vantaEffect.destroy()
-  }
+  
 
 
-  loadSheet = async() => {
-    const {data} = await axios(process.env.REACT_APP_ROSTER)
-    const parsingData = data.feed.entry
-    return parsingData
+  switchRender(scene){
+    switch(scene){
+      case 'Home':
+        this.setState({
+          renderDisplay: <Body />
+        })
+        break;
+      case 'Roster':
+        this.setState({
+          renderDisplay: <Roster />
+        })
+        break;
+      default:
+        this.setState({
+          renderDisplay: <Body />
+        })
+        break;
+    }
   }
 
   render(){
-    console.log(this.sheet)
+
     return (
       <>
-      <Navbar />
-      <div className="App" ref={this.vantaRef}> 
-      <Body />
+      <Navbar switchRender={this.switchRender} />
+      <div className="App"> 
+      {this.state.renderDisplay}
       </div>
       <Footer />
       </>
